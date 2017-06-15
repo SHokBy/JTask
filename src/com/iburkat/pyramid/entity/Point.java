@@ -11,7 +11,7 @@ public class Point {
 		z = osZ;
 	}
 	
-	public void Point(int osX, int osY, int osZ) {
+	public Point(int osX, int osY, int osZ) {
 		x = osX;
 		y = osY;
 		z = osZ;

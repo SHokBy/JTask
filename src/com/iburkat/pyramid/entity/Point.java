@@ -1,6 +1,6 @@
 package com.iburkat.pyramid.entity;
 
-public class Pioint {
+public class Point {
 	private int x;
 	private int y;
 	private int z;

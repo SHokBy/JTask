@@ -15,7 +15,7 @@ public class Pioint {
 		x = osX;
 		y = osY;
 		z = osZ;
-    }  
+	}  
 
 	public int getX() {
 		return x;

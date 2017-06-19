@@ -6,7 +6,7 @@ public class Point {
 	private int z;
 	
 	public void setPoint(int osX, int osY, int osZ){
-		x = osX;
+		x = osX; 
 		y = osY;
 		z = osZ;
 	}
@@ -39,6 +39,11 @@ public class Point {
 
 	public void setZ(int z) {
 		this.z = z;
+	}
+
+	@Override
+	public String toString() {
+		return "[" + x + ":" + y + ":" + z + "]";
 	}
 
 }

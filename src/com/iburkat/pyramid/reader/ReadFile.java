@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.apache.logging.log4j.Logger;
 
-public class readFile {
+public class ReadFile {
 
 	public static List<String> read (String fileName) throws IOException{
 

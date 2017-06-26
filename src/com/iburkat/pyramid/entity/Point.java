@@ -5,11 +5,6 @@ public class Point {
 	private int y;
 	private int z;
 	
-	public void setPoint(int osX, int osY, int osZ){
-		x = osX; 
-		y = osY;
-		z = osZ;
-	}
 	
 	public Point(int osX, int osY, int osZ) {
 		x = osX;

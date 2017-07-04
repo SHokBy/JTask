@@ -2,6 +2,7 @@ package com.iburkat.pyramid.validation;
 
 import com.iburkat.pyramid.entity.*;
 
+
 public class DataValidation {
 	public static boolean isFigurePyramid (Pyramid figure){
 		return true;
@@ -11,4 +12,14 @@ public class DataValidation {
 		return true;
 	}
 	
+	public static boolean isCountOfElementsCorrect(String[] imputRow){
+		if (imputRow.length == 12){
+			return true;			
+		}
+		else{ 
+			return false;
+		}
+		
+	}
+
 }

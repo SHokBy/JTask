@@ -18,20 +18,20 @@ public class Parser {
 		Pyramid[] listOfPyramid = new Pyramid[countElements];
 		
 		int aX = 0;
-		int Ay = 0;
-		int Az = 0;
+		int aY = 0;
+		int aZ = 0;
 
-		int Bx = 0;
-		int By = 0;
-		int Bz = 0;
+		int bX = 0;
+		int bY = 0;
+		int bZ = 0;
 		
-		int Cx = 0;
-		int Cy = 0;
-		int Cz = 0;
+		int cX = 0;
+		int cY = 0;
+		int cZ = 0;
 		
-		int Topx = 0;
-		int Topy = 0;
-		int Topz = 0;
+		int topX = 0;
+		int topY = 0;
+		int topZ = 0;
 		
 		int rowCount = 0;
 		for (String rowLines : pyramids){
@@ -40,25 +40,25 @@ public class Parser {
 			if (DataValidation.isCountOfElementsCorrect(res)){
 				try{
 					aX = Integer.parseInt(res[0]);
-					Ay = Integer.parseInt(res[1]);
-					Az = Integer.parseInt(res[2]);
+					aY = Integer.parseInt(res[1]);
+					aZ = Integer.parseInt(res[2]);
 					
-					Bx = Integer.parseInt(res[3]);
-					By = Integer.parseInt(res[4]);
-					Bz = Integer.parseInt(res[5]);
+					bX = Integer.parseInt(res[3]);
+					bY = Integer.parseInt(res[4]);
+					bZ = Integer.parseInt(res[5]);
 					
-					Cx = Integer.parseInt(res[6]);
-					Cy = Integer.parseInt(res[7]);
-					Cz = Integer.parseInt(res[8]);
+					cX = Integer.parseInt(res[6]);
+					cY = Integer.parseInt(res[7]);
+					cZ = Integer.parseInt(res[8]);
 
-					Topx = Integer.parseInt(res[9]);
-					Topy = Integer.parseInt(res[10]);
-					Topz = Integer.parseInt(res[11]);
+					topX = Integer.parseInt(res[9]);
+					topY = Integer.parseInt(res[10]);
+					topZ = Integer.parseInt(res[11]);
 
-					Point A = new Point(aX, Ay, Az);
-					Point B = new Point(Bx, By, Bz);
-					Point C = new Point(Cx, Cy, Cz);
-					Point Top = new Point(Topx, Topy, Topz);
+					Point A = new Point(aX, aY, aZ);
+					Point B = new Point(bX, bY, bZ);
+					Point C = new Point(cX, cY, cZ);
+					Point Top = new Point(topX, topY, topZ);
 					listOfPyramid[rowCount] = new  Pyramid(A, B, C, Top);				
 				}
 				catch (Exception e) {

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ReadFile {
 
-	public static List<String> read (String fileName) throws IOException{
+	public static List<String> read (String fileName) {
 
 		List<String> lines = null;
 		try {

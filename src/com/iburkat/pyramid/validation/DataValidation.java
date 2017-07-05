@@ -13,12 +13,8 @@ public class DataValidation {
 	}
 	
 	public static boolean isCountOfElementsCorrect(String[] imputRow){
-		if (imputRow.length == 12){
-			return true;			
-		}
-		else{ 
-			return false;
-		}
+		return (imputRow.length == 12);
+	
 		
 	}
 

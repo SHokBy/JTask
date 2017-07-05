@@ -10,14 +10,14 @@ import java.util.List;
 
 public class Parser {
 
-	private static Logger LOGGER  = LogManager.getLogger(); 
+	private static final Logger LOGGER  = LogManager.getLogger(); 
 	
-	public static Pyramid[] parsePyramids(List<String> pyramids) throws Exception {
+	public static Pyramid[] parsePyramids(List<String> pyramids)  {
 		
 		int countElements = pyramids.size();
 		Pyramid[] listOfPyramid = new Pyramid[countElements];
 		
-		int Ax = 0;
+		int aX = 0;
 		int Ay = 0;
 		int Az = 0;
 
@@ -39,7 +39,7 @@ public class Parser {
 			String[] res=rowLines.split(";");
 			if (DataValidation.isCountOfElementsCorrect(res)){
 				try{
-					Ax = Integer.parseInt(res[0]);
+					aX = Integer.parseInt(res[0]);
 					Ay = Integer.parseInt(res[1]);
 					Az = Integer.parseInt(res[2]);
 					
@@ -55,7 +55,7 @@ public class Parser {
 					Topy = Integer.parseInt(res[10]);
 					Topz = Integer.parseInt(res[11]);
 
-					Point A = new Point(Ax, Ay, Az);
+					Point A = new Point(aX, Ay, Az);
 					Point B = new Point(Bx, By, Bz);
 					Point C = new Point(Cx, Cy, Cz);
 					Point Top = new Point(Topx, Topy, Topz);

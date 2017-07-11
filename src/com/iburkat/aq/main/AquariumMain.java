@@ -1,13 +1,34 @@
 package com.iburkat.aq.main;
 
 import com.iburkat.aq.entity.Aquarium;
+import com.iburkat.aq.entity.Ingredient;
 
 public class AquariumMain {
 	
 	public static void main(String[] args){
 		
-		Aquarium aq = new Aquarium(23658,true, 478, "Table Aquarium", 1);
+		Aquarium aq = new Aquarium(23658,false, 478, "Table Aquarium", 1);
 		System.out.println(aq.Print());
+
+		Aquarium aq2 = new Aquarium(23659,true, 578, "Rectangular Aquarium", 3);
+		System.out.println(aq2.Print());
+		
+		aq.newComponent(Ingredient.TURTLE);
+		aq.newComponent(Ingredient.SEASHELL);
+		aq.newComponent(Ingredient.SAND);
+		
+		aq2.newComponent(Ingredient.FISH);
+		aq2.newComponent(Ingredient.CASTLE);
+		aq2.newComponent(Ingredient.SEAWEED);
+		aq2.newComponent(Ingredient.AQUARIUMEQUIPMENT);
+		
+//		System.out.println(aq.getPrice());
+	//	System.out.println(aq2.getPrice());
+		
+		
+		System.out.println(aq.printCheck());
+		System.out.println(aq2.printCheck());
+
 	}
 
 }

@@ -40,7 +40,7 @@ public class Aquarium {
 		return "[ID=" + ID + " : " + idClient + " : " + aquariumName + " : " + aquariumQuantity + "]" ;
 	}
 
-	public double getPrice() {
+	private double getPrice() {
 		double price = 0;
 		if (isFishAquarium){
 			price = 40;
@@ -54,7 +54,7 @@ public class Aquarium {
 		return price;
 	}
 
-	public String getAquariumContent(){
+	private String getAquariumContent(){
 		String content = "";
 		String delimeter = " ";
 		if (isFishAquarium){

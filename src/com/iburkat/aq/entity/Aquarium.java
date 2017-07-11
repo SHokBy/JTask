@@ -42,7 +42,7 @@ public class Aquarium {
 
 	public double getPrice() {
 		double price = 0;
-		if (isFishAquarium == true){
+		if (isFishAquarium){
 			price = 40;
 		}else{
 			price = 50;
@@ -57,6 +57,12 @@ public class Aquarium {
 	public String getAquariumContent(){
 		String content = "";
 		String delimeter = " ";
+		if (isFishAquarium){
+			content = "Aquarium F.              40.0$\n";
+		}else{
+			content = "Aquarium T.              50.0$\n";
+		}
+		
 		for (Ingredient item: ingredients){
 			delimeter = new String(new char[25-item.name().length()]).replace("\0", " ");
 			content += item.name()+delimeter+item.getPrice()+"$\n";

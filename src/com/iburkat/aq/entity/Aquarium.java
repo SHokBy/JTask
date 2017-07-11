@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class Aquarium {
 	public final int ID;
+	private final static double AQUARIUMFISHPRICE = 40;
+	private final static double AQUARIUMTURTLEPRICE = 50;
 	private boolean isFishAquarium;
 	private int idClient;
 	private String aquariumName;
@@ -56,16 +58,14 @@ public class Aquarium {
 
 	private String getAquariumContent(){
 		String content = "";
-		String delimeter = " ";
 		if (isFishAquarium){
-			content = "Aquarium F.              40.0$\n";
+			content = String.format("%-25s", "Aquarium F.")+ AQUARIUMFISHPRICE+"$\n";
 		}else{
-			content = "Aquarium T.              50.0$\n";
+			content = String.format("%-25s", "Aquarium T.")+ AQUARIUMTURTLEPRICE+"$\n";
 		}
 		
 		for (Ingredient item: ingredients){
-			delimeter = new String(new char[25-item.name().length()]).replace("\0", " ");
-			content += item.name()+delimeter+item.getPrice()+"$\n";
+			content += String.format("%-25s", item.name())+item.getPrice()+"$\n";
 		}
 		
 		return content;
@@ -78,10 +78,10 @@ public class Aquarium {
 				+ "--------------------------------\n"
 				+ "%4$s"
 				+ "--------------------------------\n"
-				+ "Total:                   %5$.1f$\n"
-				+ "Quantity:                %6$d\n"
+				+ String.format("%-25s", "Total:")+"%5$.1f$\n"
+				+ String.format("%-25s", "Quantity:")+"%6$d\n"
 				+ "--------------------------------\n"
-				+ "Total price:             %7$.1f$\n"
+				+ String.format("%-25s", "Total price:")+"%7$.1f$\n"
 				+ "********************************\n", ID, idClient, aquariumName, getAquariumContent(), getPrice(), aquariumQuantity, getPrice()*aquariumQuantity);
 	}
 	

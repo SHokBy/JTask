@@ -4,20 +4,24 @@ import java.util.ArrayList;
 
 public class Aquarium {
 	public final int ID;
-	private final static double AQUARIUMFISHPRICE = 40;
-	private final static double AQUARIUMTURTLEPRICE = 50;
+	private final static double AQUARIUM_FISH_PRICE = 40;
+	private final static double AQUARIUM_TURTLE_PRICE = 50;
+	private final static double MIN_LENGHT = 4;
+	private final static double MAX_LENGHT = 20;
+	private final static double MAX_COMPONENT_COUNT = 7;
+	
 	private boolean isFishAquarium;
-	private int idClient;
+	private int clientId;
 	private String aquariumName;
 	private int aquariumQuantity;
 	private ArrayList<Ingredient> ingredients = new ArrayList<>();
 	
-	public Aquarium(int iD, boolean isFishAquarium, int idClient, String aquariumName, int aquariumCount) {
+	public Aquarium(int iD, boolean isFishAquarium, int clientId, String aquariumName, int aquariumCount) {
 		super();
 		ID = iD;
 		this.isFishAquarium = isFishAquarium;
-		this.idClient = idClient;
-		if (aquariumName.length()>=4 && aquariumName.length()<=20) {
+		this.clientId = clientId;
+		if (aquariumName.length()>=MIN_LENGHT && aquariumName.length()<=MAX_LENGHT) {
 			this.aquariumName = aquariumName;
 		}else{
 			this.aquariumName = "Client " + iD;			
@@ -26,7 +30,7 @@ public class Aquarium {
 	}
 	
 	public void newComponent(Ingredient newIngredient){
-		if (ingredients.size() == 7){
+		if (ingredients.size() == MAX_COMPONENT_COUNT){
 			System.out.println("Aquarium is full");
 		}else{
 			if (!ingredients.contains(newIngredient)){
@@ -39,15 +43,15 @@ public class Aquarium {
 	}
 
 	public String Print() {
-		return "[ID=" + ID + " : " + idClient + " : " + aquariumName + " : " + aquariumQuantity + "]" ;
+		return "[ID=" + ID + " : " + clientId + " : " + aquariumName + " : " + aquariumQuantity + "]" ;
 	}
 
 	private double getPrice() {
 		double price = 0;
 		if (isFishAquarium){
-			price = 40;
+			price = AQUARIUM_FISH_PRICE;
 		}else{
-			price = 50;
+			price = AQUARIUM_TURTLE_PRICE;
 		}
 		for(Ingredient  item: ingredients){
 			price += item.getPrice();
@@ -59,9 +63,9 @@ public class Aquarium {
 	private String getAquariumContent(){
 		String content = "";
 		if (isFishAquarium){
-			content = String.format("%-25s", "Aquarium F.")+ AQUARIUMFISHPRICE+"$\n";
+			content = String.format("%-25s", "Aquarium F.")+ AQUARIUM_FISH_PRICE+"$\n";
 		}else{
-			content = String.format("%-25s", "Aquarium T.")+ AQUARIUMTURTLEPRICE+"$\n";
+			content = String.format("%-25s", "Aquarium T.")+ AQUARIUM_TURTLE_PRICE+"$\n";
 		}
 		
 		for (Ingredient item: ingredients){
@@ -82,7 +86,7 @@ public class Aquarium {
 				+ String.format("%-25s", "Quantity:")+"%6$d\n"
 				+ "--------------------------------\n"
 				+ String.format("%-25s", "Total price:")+"%7$.1f$\n"
-				+ "********************************\n", ID, idClient, aquariumName, getAquariumContent(), getPrice(), aquariumQuantity, getPrice()*aquariumQuantity);
+				+ "********************************\n", ID, clientId, aquariumName, getAquariumContent(), getPrice(), aquariumQuantity, getPrice()*aquariumQuantity);
 	}
 	
 }

@@ -42,7 +42,7 @@ public class Aquarium {
 		
 	}
 
-	public String Print() {
+	public String print() {
 		return "[ID=" + ID + " : " + clientId + " : " + aquariumName + " : " + aquariumQuantity + "]" ;
 	}
 

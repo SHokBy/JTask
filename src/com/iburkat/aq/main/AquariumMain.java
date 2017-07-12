@@ -8,10 +8,10 @@ public class AquariumMain {
 	public static void main(String[] args){
 		
 		Aquarium aq = new Aquarium(23658,false, 478, "Table Aquarium", 1);
-		System.out.println(aq.Print());
+		System.out.println(aq.print());
 
 		Aquarium aq2 = new Aquarium(23659,true, 578, "Rectangular Aquarium", 3);
-		System.out.println(aq2.Print());
+		System.out.println(aq2.print());
 		
 		aq.newComponent(Ingredient.TURTLE);
 		aq.newComponent(Ingredient.SEASHELL);

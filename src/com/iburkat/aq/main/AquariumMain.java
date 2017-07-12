@@ -22,9 +22,6 @@ public class AquariumMain {
 		aq2.newComponent(Ingredient.SEAWEED);
 		aq2.newComponent(Ingredient.AQUARIUMEQUIPMENT);
 		
-//		System.out.println(aq.getPrice());
-	//	System.out.println(aq2.getPrice());
-		
 		
 		System.out.println(aq.printCheck());
 		System.out.println(aq2.printCheck());

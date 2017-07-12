@@ -6,8 +6,8 @@ public class Aquarium {
 	public final int ID;
 	private final static double AQUARIUM_FISH_PRICE = 40;
 	private final static double AQUARIUM_TURTLE_PRICE = 50;
-	private final static double MIN_LENGHT = 4;
-	private final static double MAX_LENGHT = 20;
+	private final static double MIN_LENGTH = 4;
+	private final static double MAX_LENGTH = 20;
 	private final static double MAX_COMPONENT_COUNT = 7;
 	
 	private boolean isFishAquarium;
@@ -21,7 +21,7 @@ public class Aquarium {
 		ID = iD;
 		this.isFishAquarium = isFishAquarium;
 		this.clientId = clientId;
-		if (aquariumName.length()>=MIN_LENGHT && aquariumName.length()<=MAX_LENGHT) {
+		if (aquariumName.length()>=MIN_LENGTH && aquariumName.length()<=MAX_LENGTH) {
 			this.aquariumName = aquariumName;
 		}else{
 			this.aquariumName = "Client " + iD;			
